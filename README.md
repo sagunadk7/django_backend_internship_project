@@ -1,2 +1,1 @@
 # django_backend_internship_project
-# django_backend_internship_project
