@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.authentication import  SessionAuthentication,BasicAuthentication
 from rest_framework import viewsets
 from api.mypagination import MyLimitoffsetPagination
 from api.models import User
@@ -20,7 +21,7 @@ class ProtectedViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializers
     permission_classes = [IsAuthenticated]
     pagination_class = MyLimitoffsetPagination
-    authentication_classes = [JWTAuthentication]
+    authentication_classes = [JWTAuthentication, SessionAuthentication, BasicAuthentication]
 
 
 # Create your views here.
