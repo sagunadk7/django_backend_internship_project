@@ -14,7 +14,7 @@ class PublicViewSet(viewsets.ReadOnlyModelViewSet):
     pagination_class = MyLimitoffsetPagination
 
 
-# This is the protected view for authenticated users only and give full CRUD access to all items
+# This is the JWT protected view only, authenticated users  can do CRUD operations
 class ProtectedViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializers

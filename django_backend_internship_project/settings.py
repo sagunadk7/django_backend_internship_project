@@ -57,7 +57,7 @@ ROOT_URLCONF = 'django_backend_internship_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,3 +136,7 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS':True,
     'AUTH_HEADER_TYPES':('Bearer',),
 }
+# SESSION_COOKIE_AGE = 1209600
+# SESSION_SAVE_EVERY_REQUEST = True
+# SESSION_EXPIRE_AT_BROWER_CLOSE = False
+# CSRF_COOKIE_SECURE = False

@@ -1,3 +1,4 @@
+# This is the custom pagination for API
 from rest_framework.pagination import LimitOffsetPagination
 class MyLimitoffsetPagination(LimitOffsetPagination):
     default_limit = 10

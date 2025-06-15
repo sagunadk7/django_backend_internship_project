@@ -5,7 +5,7 @@ from api.views import ProtectedViewSet
 
 
 router = DefaultRouter()
-router.register('items',ProtectedViewSet, basename='public-items')
+router.register('items',ProtectedViewSet, basename='protected-items')
 urlpatterns = [
     path('protected/api/',include(router.urls))
 ]
