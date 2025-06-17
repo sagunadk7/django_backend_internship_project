@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.conf.urls import handler404
 from rest_framework_simplejwt.tokens import RefreshToken
+from users.tasks import send_custom_mail
 
 # This is the view that handle signup for user
 def SignupView(request):
@@ -39,6 +40,8 @@ def SignupView(request):
         # create a new User
         User.objects.create_user(username = username,email=email,password=password)
 
+        # Using celery  sends an registration mail after registration is success
+        send_custom_mail.delay(email,username,password)
         # Authenticate user and return boolen value None
         user = authenticate(request,username=username,password=password)
 
@@ -73,5 +76,5 @@ def LogoutView(request):
     return redirect('loginpage')
 
 # This is the view that handles undeclared url
-def custom_404_view(request,exception):
+def custom_404_view(request):
     return render(request, '404.html',status = 404)
