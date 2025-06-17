@@ -1,5 +1,5 @@
 """
-WSGI config for django_backend_internship_project project.
+WSGI config for telegrambot_project project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_backend_internship_project.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'telegrambot_project.settings')
 
 application = get_wsgi_application()

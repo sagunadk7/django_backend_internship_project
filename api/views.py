@@ -4,7 +4,7 @@ from rest_framework.authentication import  SessionAuthentication,BasicAuthentica
 from rest_framework import viewsets
 from api.mypagination import MyLimitoffsetPagination
 from api.models import User
-from api.serializers import UserSerializers
+from api.serializers import UserSerializers,DetailedUserSerializers
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 # This is public view for public api , public can only read it
@@ -18,7 +18,7 @@ class PublicViewSet(viewsets.ReadOnlyModelViewSet):
 # This is the JWT protected view only, authenticated users  can do CRUD operations
 class ProtectedViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
-    serializer_class = UserSerializers
+    serializer_class = DetailedUserSerializers
     permission_classes = [IsAuthenticated]
     pagination_class = MyLimitoffsetPagination
     authentication_classes = [JWTAuthentication, SessionAuthentication, BasicAuthentication]
