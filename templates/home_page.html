@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Body and Background */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #e0f2f7, #c8e6c9);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f8ff, #e0f2f7); /* Light and airy background */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,90 +20,207 @@
             color: #333;
             box-sizing: border-box;
         }
-
-        /* Container */
-        .welcome-container {
-            background-color: #ffffff;
-            padding: 50px;
-            border-radius: 12px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        .welcome-card {
+            background-color: #fff;
+            padding: 60px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             width: 100%;
-            max-width: 600px;
+            max-width: 650px;
             text-align: center;
             box-sizing: border-box;
-            border: 1px solid #f0f0f0;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.2s ease-in-out;
         }
-
-        .welcome-container h2 {
+        .welcome-card:hover {
+            transform: translateY(-5px);
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
             margin-bottom: 30px;
-            font-size: 2.2em;
-            font-weight: 700;
-            color: #2e7d32;
-        }
-
-        .token-box {
-            background-color: #f7f9fb;
-            border: 1px solid #cfd8dc;
-            padding: 18px;
-            margin: 15px 0;
-            border-radius: 8px;
-            text-align: left;
-            font-family: monospace;
-            font-size: 0.95em;
-            color: #37474f;
-            word-break: break-all;
-        }
-
-        .label {
-            font-weight: 600;
-            color: #555;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .logout-button {
-            margin-top: 30px;
-            padding: 14px 24px;
-            background: linear-gradient(135deg, #ef5350, #e53935);
+            background-color: #64b5f6;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             color: white;
+            font-size: 2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin-left: auto; /* Center the logo */
+            margin-right: auto; /* Center the logo */
+        }
+        h1 {
+            margin-bottom: 25px;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #2c3e50; /* A bit more sophisticated heading color */
+        }
+        .tagline {
             font-size: 1.1em;
+            color: #777;
+            margin-bottom: 40px;
+        }
+        .info-message { /* New style for the info message */
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 25px;
+            padding: 15px 20px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #3498db; /* A subtle blue highlight */
+            border-radius: 4px;
+            line-height: 1.6;
+        }
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .action-button {
+            display: inline-block;
+            padding: 14px 32px;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .action-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+        .primary-button {
+            background-color: #3498db; /* A friendly blue */
+        }
+        .primary-button:hover {
+            background-color: #2980b9;
+        }
+        .secondary-button {
+            background-color: #2ecc71; /* A fresh green */
+        }
+        .secondary-button:hover {
+            background-color: #27ae60;
+        }
+        .tertiary-button {
+            background-color: #f39c12; /* An inviting orange */
+        }
+        .tertiary-button:hover {
+            background-color: #e67e22;
+        }
+        .login-signup {
+            margin-top: 20px;
+            font-size: 0.95em;
+            color: #555;
+        }
+        .login-signup a {
+            color: #3498db;
+            text-decoration: none;
             font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .login-signup a:hover {
+            color: #2980b9;
+        }
+        .logout-form {
+            margin-top: 30px;
+        }
+        .logout-button {
+            padding: 12px 28px;
+            background-color: #e74c3c; /* A warning red */
+            color: white;
             border: none;
             border-radius: 8px;
+            font-size: 1em;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
         .logout-button:hover {
-            background: linear-gradient(135deg, #d32f2f, #b71c1c);
+            background-color: #c0392b;
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
         }
 
-        @media (max-width: 500px) {
-            .welcome-container {
-                padding: 30px 20px;
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .welcome-card {
+                padding: 40px;
             }
-
-            .welcome-container h2 {
-                font-size: 1.8em;
+            h1 {
+                font-size: 2em;
             }
-
-            .logout-button {
-                padding: 12px;
+            .tagline {
                 font-size: 1em;
+                margin-bottom: 30px;
+            }
+            .info-message {
+                font-size: 0.9em;
+            }
+            .actions {
+                gap: 10px;
+            }
+            .action-button {
+                padding: 12px 24px;
+                font-size: 1em;
+            }
+            .logout-button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+        @media (max-width: 400px) {
+            .welcome-card {
+                padding: 30px;
+            }
+            .logo {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 20px;
+                font-size: 1.5em;
             }
         }
     </style>
 </head>
 <body>
-    <div class="welcome-container">
-        <h2>Welcome, {{ username }}</h2>
+    <div class="welcome-card">
+        <div class="logo">WP</div> <h1>Welcome to Our Platform</h1>
+        <p class="tagline">Discover amazing features and connect with our community.</p>
 
+        {% if not user.is_authenticated %}
+        <p class="info-message">
+            To access the **Protected API**, you'll need to be **logged in**.
+            <br>
+            Don't have an account yet? It's quick and easy to **sign up**!
+        </p>
+        {% endif %}
 
+        <div class="actions">
+            <a href="http://127.0.0.1:8000/public/api/" class="action-button primary-button" target="_blank" rel="noopener">Explore Public API</a>
+            <a href="http://127.0.0.1:8000/protected/api/" class="action-button secondary-button" target="_blank" rel="noopener">Access Protected API</a>
+            <a href="/features" class="action-button tertiary-button">Learn More About Features</a>
+        </div>
 
-        <form action="{% url 'logout' %}" method="POST">
+        {% if not user.is_authenticated %}
+        <p class="login-signup">
+            Already have an account? <a href="{% url 'loginpage' %}">Log in here</a>
+            <br>
+            Ready to join? <a href="{% url 'signuppage' %}">Create your account now</a>
+        </p>
+        {% else %}
+        <p class="login-signup">
+            You're currently logged in as: <strong>{{ username }}</strong>
+        </p>
+        <form class="logout-form" action="{% url 'logout' %}" method="POST">
             {% csrf_token %}
             <button class="logout-button" type="submit">Logout</button>
         </form>
+        {% endif %}
     </div>
 </body>
 </html>

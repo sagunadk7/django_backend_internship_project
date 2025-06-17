@@ -65,9 +65,9 @@ def LoginView(request):
     return render(request,'login_page.html')
 
 # This is the view that handle homepage
-@login_required(login_url='/login/')
 def HomeView(request):
-    return render(request,'home_page.html')
+    username = request.user.username
+    return render(request,'home_page.html',{'username':username})
 
 # This view Handles logout logic
 @login_required(login_url='/login/')

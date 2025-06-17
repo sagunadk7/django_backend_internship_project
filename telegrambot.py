@@ -9,7 +9,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, Messa
 from api.models import User
 from asgiref.sync import sync_to_async
 
-API_KEY = '8157670383:AAFszTvnJ2ROncoug2Qii-mkwdcnKrtVApU'  # Replace with your actual token
+API_KEY = 'YOUR-TELEGRAMBOT-API'  # Replace with your actual token
 
 
 @sync_to_async
