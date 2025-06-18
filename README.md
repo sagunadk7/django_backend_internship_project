@@ -86,6 +86,12 @@ SIMPLE_JWT = {
 }
 ```
 
+telegrambot.py
+
+```python
+API_KEY = 'YOUR-TELEGRAMBOT-API'
+```
+
 ---
 
 ## 🧪 Running Locally
