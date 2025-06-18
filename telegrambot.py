@@ -1,6 +1,8 @@
+# imported os and django to set the DJANGO_SETTINGS_MODULE environment variable
+# then called django.setup() so that our standalone Python script can properly
+# load and use our Django project’s settings and components.
 import os
 import django
-
 os.environ['DJANGO_SETTINGS_MODULE'] = 'telegrambot_project.settings'
 django.setup()
 
