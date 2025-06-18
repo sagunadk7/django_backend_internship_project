@@ -189,7 +189,10 @@ A RESTful Django-based API for managing Telegram bot users, with public read-onl
 ---
 
 ## 🔐 Authentication
+Protected APIs use JWT Authentication.
 
+You can get your username and password by first registering at the signup page after running the server.
+Visit: http://127.0.0.1:8000/signup/ to create an account.
 Protected APIs use **JWT Authentication**. You can obtain a token from:
 
 ### `POST /api/token/`
