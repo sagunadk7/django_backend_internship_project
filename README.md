@@ -115,8 +115,7 @@ python telegrambot.py
 ## 📁 Project Structure
 
 ```text
-telegrambot_project/
-├── .venv/                    # Python virtual environment
+telegrambot_project/                # Python virtual environment
 ├── api/                      # Main API application
 │   ├── migrations/           # Database migrations
 │   ├── __init__.py
@@ -155,7 +154,6 @@ telegrambot_project/
 │   ├── user_urls.py
 │   └── views.py
 │
-├── .gitignore
 ├── db.sqlite3
 ├── manage.py
 ├── README.md
